@@ -1,0 +1,63 @@
+public class Character {
+    private String name;
+    private int health;
+    private int attackPower;
+
+    public Character(String name,int health,int attackPower){
+        this.name=name;
+        this.health=health;
+        this.attackPower=attackPower;
+    }
+
+    public void takeDamage(int damage){
+      this.health-=damage;
+        System.out.println(name + " has taken " + damage + " damage. Remaining health: " + health);
+
+    }
+
+    public void attack(Character enemy){
+       enemy.takeDamage(this.attackPower);
+    }
+
+    public void heal(int heal){
+        int maxHealth=300;
+        if(health+heal<=maxHealth){
+            this.health+=heal;
+        }else{
+            this.health=maxHealth;
+        }
+        if(this.health <=0){
+            this.health=0;
+            System.out.println(name + " has been killed.");
+        }else{
+            System.out.println(name + " has healed for " + heal + " health. Remaining health: " + health);
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getAttackPower() {
+        return attackPower;
+    }
+
+    public void setAttackPower(int attackPower) {
+        this.attackPower = attackPower;
+    }
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Health: " + health + ", Attack Power: " + attackPower);
+    }
+}
