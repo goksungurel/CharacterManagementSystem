@@ -1,0 +1,28 @@
+public class Warrior extends Character {
+    private int defense;
+
+    public Warrior(String name,int health,int attackPower,int defense){
+        super(name,health,attackPower);
+
+        this.defense=defense;
+    }
+
+public void attack(Character enemy){
+        System.out.println(getName()+" swing a sword!");
+
+        super.attack(enemy);
+}
+public void takeDamage(int damage){
+        int damageAfterDefense= damage-defense;
+        if(damageAfterDefense<0){
+            damageAfterDefense=0;
+
+            super.takeDamage(damageAfterDefense);
+        }
+}
+public void displayInfo(){
+        super.displayInfo();
+
+        System.out.println("Defense: " + defense);
+}
+}
