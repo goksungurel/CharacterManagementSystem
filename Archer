@@ -1,0 +1,14 @@
+public class Archer extends Character{
+    public Archer(String name,int health,int attackPower){
+        super(name,health,attackPower);
+}
+//Attack methodu özelleştir
+    // @Override
+    public void attack(Character enemy){
+        System.out.println();
+        super.attack(enemy);
+    }
+    public void displayInfo(){
+        super.displayInfo();
+    }
+}
