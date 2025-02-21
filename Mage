@@ -1,0 +1,24 @@
+public class Mage extends Character{
+    private int mana; //büyücülerin saldırı yapabilmeleri mana gerekir
+
+    public Mage(String name ,int health,int attackPower,int mana) {
+        super(name, health ,attackPower) ;
+        this.mana = mana;
+    }
+//Attack modunu özelleştir polym
+// @override
+    public void attack(Character enemy){
+        if(mana>=10){
+            mana-=10;
+            System.out.println(getName() +"cats a fireball");
+            super.attack(enemy);
+        }else{
+            System.out.println(getName()+ "does not have enough mana to attack.");
+        }
+    }
+
+public void displayInfo(){
+        super.displayInfo();
+        System.out.println("Mana: " + mana);
+}
+}
